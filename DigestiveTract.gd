@@ -30,9 +30,7 @@ func digest() -> void:
 				stomach.content.remove(i)
 				item.queue_free()
 	#Start emptying Chyme from stomach to intestines
-	#liquid/kcal + liquid volume
-	var liquid_empty_rate = stomach.chyme.water_volume
-	Chyme
+	
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	stomach  = Stomach.new()
