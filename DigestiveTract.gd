@@ -14,7 +14,7 @@ func digest() -> void:
 		var item = stomach.content[i]
 		
 		if item.toughness < stomach.digestion_strength:
-			var breakdown_volume = stomach.volume - (stomach.volume*item.toughness) * item.integrity
+			var breakdown_volume = item.volume - (item.volume*item.toughness) * item.integrity
 			item.integrity = max(0, item.integrity - stomach.breakdown_rate)
 			item.volume = item.volume - breakdown_volume
 			
@@ -30,6 +30,7 @@ func digest() -> void:
 				stomach.content.remove(i)
 				item.queue_free()
 	#Start emptying Chyme from stomach to intestines
+	#liquid/kcal + liquid volume
 	
 # Called when the node enters the scene tree for the first time.
 func _ready():
